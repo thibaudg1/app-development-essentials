@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVplayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xE-wV-nJ9">
+                                <rect key="frame" x="149.66666666666666" y="340" width="94" height="34.666666666666686"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Play here"/>
+                                <connections>
+                                    <action selector="playHere:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tPs-Uj-5qV"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osi-rd-LrN">
+                                <rect key="frame" x="16" y="59" width="361" height="240"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="eWV-Bt-WCo"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exc-Ax-6Fl">
+                                <rect key="frame" x="128.66666666666669" y="408.66666666666669" width="135.66666666666669" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Remove player"/>
+                                <connections>
+                                    <action selector="removePlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LMp-nt-6lB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0f-MU-kuk">
+                                <rect key="frame" x="143.66666666666666" y="767" width="105.66666666666666" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play movie"/>
+                                <connections>
+                                    <segue destination="jdo-xS-1x5" kind="show" id="sF8-pf-HDD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="exc-Ax-6Fl" firstAttribute="centerX" secondItem="8xE-wV-nJ9" secondAttribute="centerX" id="0Sg-2L-Z1d"/>
+                            <constraint firstItem="osi-rd-LrN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0uJ-5Y-R41"/>
+                            <constraint firstItem="8xE-wV-nJ9" firstAttribute="top" secondItem="osi-rd-LrN" secondAttribute="bottom" constant="41" id="5lf-5P-qAj"/>
+                            <constraint firstItem="osi-rd-LrN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DpY-g3-Ldi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U0f-MU-kuk" secondAttribute="bottom" constant="16" id="IeB-8m-fue"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="osi-rd-LrN" secondAttribute="trailing" constant="16" id="Lon-Pk-K0K"/>
+                            <constraint firstItem="8xE-wV-nJ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vr4-ed-rGv"/>
+                            <constraint firstItem="exc-Ax-6Fl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zbv-tl-uud"/>
+                            <constraint firstItem="U0f-MU-kuk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tvT-IS-eja"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="videoView" destination="osi-rd-LrN" id="gH7-WJ-6pI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5.343511450381679" y="3.5211267605633805"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="L5b-wj-i5w">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="jdo-xS-1x5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2mf-DS-aEw"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xE2-v2-lZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

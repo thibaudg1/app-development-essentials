@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CameraDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3c-js-Lle">
+                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="m9f-kD-TVd"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Camera" id="rex-yE-L1L">
+                                        <connections>
+                                            <action selector="useCamera:" destination="BYZ-38-t0r" id="8W9-96-Abg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2wf-Rf-Ad2"/>
+                                    <barButtonItem title="Roll" id="chM-dD-O6g">
+                                        <connections>
+                                            <action selector="openCameraRoll:" destination="BYZ-38-t0r" id="oBu-gf-RYk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PGT-je-Tgl"/>
+                                    <barButtonItem title="Library" id="Lga-Yv-mzw">
+                                        <connections>
+                                            <action selector="openPhotoLibrary:" destination="BYZ-38-t0r" id="VNK-V6-ebv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-Pb-CJA">
+                                <rect key="frame" x="16" y="59" width="361" height="695"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwy-mC-GEi">
+                                <rect key="frame" x="16" y="59" width="361" height="695"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hLF-Pb-CJA" secondAttribute="trailing" constant="16" id="0q1-vs-zX3"/>
+                            <constraint firstItem="hLF-Pb-CJA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6U3-fk-xdN"/>
+                            <constraint firstItem="w3c-js-Lle" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6XC-j6-78J"/>
+                            <constraint firstItem="w3c-js-Lle" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9er-tz-bMM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bwy-mC-GEi" secondAttribute="trailing" constant="16" id="IfC-qf-CZ2"/>
+                            <constraint firstItem="w3c-js-Lle" firstAttribute="top" secondItem="bwy-mC-GEi" secondAttribute="bottom" constant="20" id="NBe-hj-OcX"/>
+                            <constraint firstItem="bwy-mC-GEi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bCa-rU-6Tv"/>
+                            <constraint firstItem="w3c-js-Lle" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jZl-ki-Rto"/>
+                            <constraint firstItem="hLF-Pb-CJA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mzf-DB-tsz"/>
+                            <constraint firstItem="w3c-js-Lle" firstAttribute="top" secondItem="hLF-Pb-CJA" secondAttribute="bottom" constant="20" id="tEe-dF-AsU"/>
+                            <constraint firstItem="bwy-mC-GEi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zuz-wC-rkD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hLF-Pb-CJA" id="BtT-JP-9Zp"/>
+                        <outlet property="videoView" destination="bwy-mC-GEi" id="AIj-3o-2Os"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5.343511450381679" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Signature1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdq-ZC-fmg">
+                                <rect key="frame" x="57" y="80" width="300" height="150"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="0LS-zW-8LR"/>
+                                    <constraint firstAttribute="height" constant="150" id="Hgt-RZ-6BS"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3u1-uj-YIA" customClass="ViewForDrawing" customModule="Signature1" customModuleProvider="target">
+                                <rect key="frame" x="57" y="262" width="300" height="150"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="V90-9m-pBP"/>
+                                    <constraint firstAttribute="height" constant="150" id="VMn-qv-4tW"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APR-kS-HlI" customClass="CaptureAndDrawView" customModule="Signature1" customModuleProvider="target">
+                                <rect key="frame" x="57" y="444" width="300" height="150"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="bak-pZ-Ef5"/>
+                                    <constraint firstAttribute="width" constant="300" id="gHk-Cv-8Fh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xv-3A-Zcw">
+                                <rect key="frame" x="175" y="811.5" width="64" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Clear"/>
+                                <connections>
+                                    <action selector="clearCanva:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nqF-EK-JyG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3u1-uj-YIA" firstAttribute="top" secondItem="Mdq-ZC-fmg" secondAttribute="bottom" constant="32" id="1EH-ac-ihw"/>
+                            <constraint firstItem="3xv-3A-Zcw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4mb-jQ-ylu"/>
+                            <constraint firstItem="3u1-uj-YIA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9yW-Dc-fwM"/>
+                            <constraint firstItem="APR-kS-HlI" firstAttribute="top" secondItem="3u1-uj-YIA" secondAttribute="bottom" constant="32" id="Ghd-W3-7Mh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3xv-3A-Zcw" secondAttribute="bottom" constant="16" id="NG8-aW-wA1"/>
+                            <constraint firstItem="Mdq-ZC-fmg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="WUi-Z4-nPf"/>
+                            <constraint firstItem="APR-kS-HlI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bdV-TQ-aEA"/>
+                            <constraint firstItem="Mdq-ZC-fmg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fSk-N6-C7k"/>
+                            <constraint firstItem="3xv-3A-Zcw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="APR-kS-HlI" secondAttribute="bottom" constant="32" id="sMA-Iy-gLf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captureDrawView" destination="APR-kS-HlI" id="tXd-Jz-fQd"/>
+                        <outlet property="signatureInput" destination="Mdq-ZC-fmg" id="fTW-ux-U99"/>
+                        <outlet property="signatureOutput" destination="3u1-uj-YIA" id="nRG-eJ-Yra"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
